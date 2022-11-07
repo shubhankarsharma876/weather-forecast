@@ -5,7 +5,7 @@ const Searchbar = () => {
     <div>
       <div className="m-8 p-8 flex justify-center gap-3 ">
         <input
-          className="rounded-xl w-[500px] border-black "
+          className="rounded-xl w-[500px] border-black border-2 "
           placeholder="Eneter city name"
         ></input>
         <button className=" text-2xl border-2 rounded-xl p-1 cursor-pointer border-black   ">
