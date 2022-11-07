@@ -10,7 +10,7 @@ const Searchbar = () => {
           placeholder="Enter city name"
         ></input>
         <button className=" text-2xl border-2 rounded-xl p-1 cursor-pointer border-black   ">
-          Search{" "}
+          Search
         </button>
       </div>
     </div>

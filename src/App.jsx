@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+
 function App() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
