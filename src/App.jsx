@@ -1,8 +1,10 @@
+import Navbar from "../components/Navbar";
 function App() {
   return (
-    <h1 className="text-3xl font-bold mt-6 flex justify-center">
-      Weather Forecast
-    </h1>
+    <div>
+      <Navbar />
+      
+    </div>
   );
 }
 
