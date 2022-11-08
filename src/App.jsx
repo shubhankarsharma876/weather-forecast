@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Weather from "../components/Weather";
 
 function App() {
   const [city, setCity] = useState("");
@@ -23,6 +22,17 @@ function App() {
     }
   };
 
+  const handleClick = async () => {
+    await fetch(url)
+      .then((res) => {
+        setData(res.data);
+        console.log(city);
+      })
+      .catch((err) => console.log(err));
+
+    setCity("");
+  };
+
   return (
     <div>
       <h1 className="text-[40px] font-bold mt-6 flex justify-center">
@@ -37,16 +47,25 @@ function App() {
           onChange={handleChange}
           onKeyUp={searchLocation}
         ></input>
-        <button 
+        <button
           className="text-2xl border-2 rounded-xl p-1 cursor-pointer border-black bg-sky-500 hover:bg-sky-700 "
-          
-          onClick={searchLocation}
+          onClick={handleClick}
         >
           Search
         </button>
       </div>
 
-      <Weather />
+      <div>
+      <div className="header text-center text-2xl ">{`CityName: ${city} `}</div>
+      <div className="middle flex gap-5 justify-center">
+        <div className="Day Date text-center">Date/Date:</div>
+        <div className="description text-center">Weather:</div>
+      </div>
+      <div className="lower flex gap-5 justify-center">
+        <div className="temperature text-cente">Temperature:</div>
+        <div className="humidity text-center">Humidity:</div>
+      </div>
+    </div>
     </div>
   );
 }
