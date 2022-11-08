@@ -9,7 +9,7 @@ const Searchbar = () => {
           className="rounded-xl w-[500px] border-black border-2 bg-transparent"
           placeholder="Enter city name"
         ></input>
-        <button className=" text-2xl border-2 rounded-xl p-1 cursor-pointer border-black   ">
+        <button className="text-2xl border-2 rounded-xl p-1 cursor-pointer border-black bg-sky-500 hover:bg-sky-700 ...   " >
           Search
         </button>
       </div>
