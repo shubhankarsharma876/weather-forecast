@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [city, setCity] = useState("");
@@ -6,10 +6,7 @@ function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=8b012c901bf163a9fdf5e605be074fe4`;
 
-  const handleChange = (e) => {
-    setCity(e.target.value);
-    console.log(city);
-  };
+ 
 
   const searchLocation = async (e) => {
     if (e.key == "Enter") {
@@ -44,7 +41,7 @@ function App() {
           value={city}
           className="rounded-xl w-[500px] border-black border-2 bg-transparent"
           placeholder="Enter city name"
-          onChange={handleChange}
+          onChange={event => setCity(event.target.value)}
           onKeyUp={searchLocation}
         ></input>
         <button
@@ -55,17 +52,18 @@ function App() {
         </button>
       </div>
 
+      
       <div>
-      <div className="header text-center text-2xl ">{`CityName: ${city} `}</div>
-      <div className="middle flex gap-5 justify-center">
-        <div className="Day Date text-center">Date/Date:</div>
-        <div className="description text-center">Weather:</div>
+        <div className="header text-center text-2xl ">{`CityName: ${data.name}  `}</div>
+        <div className="middle flex gap-5 justify-center">
+          <div className="Day Date text-center">Date/Date:</div>
+          <div className="description text-center">Weather:</div>
+        </div>
+        <div className="lower flex gap-5 justify-center">
+          <div className="temperature text-cente">Temperature:</div>
+          <div className="humidity text-center">Humidity:</div>
+        </div>
       </div>
-      <div className="lower flex gap-5 justify-center">
-        <div className="temperature text-cente">Temperature:</div>
-        <div className="humidity text-center">Humidity:</div>
-      </div>
-    </div>
     </div>
   );
 }
