@@ -44,15 +44,15 @@ function App() {
         {/* Div1 */}
         <div className="top text-2xl flex justify-between gap-5 m-[0.9rem] ">
           <div className="temp text-center ml-[7rem] ">
-            {data.main ? `Temperature: ${data.main.temp.toFixed()} °C` : null}
+            {data.main ? `Temperature: ${data.main.temp.toFixed()}°C` : null}
           </div>
           <div className="description text-center flex mr-[6rem]">
-            {data.weather ? `Description:  ${data.weather[0].main}` : null}
+            {data.weather ? `Description: ${data.weather[0].main}`:null}
           </div>
         </div>
 
         {data.name !== undefined && (
-          <div className="bottom text-2xl pb-10 flex gap-5 justify-between">
+          <div className="bottom text-2xl pb-10 flex gap-5 justify-between ">
             <div className="wind text-center ml-[8rem]">
               {data.wind
                 ? `Wind Speed: ${data.wind.speed.toFixed()} KPH`
