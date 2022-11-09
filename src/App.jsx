@@ -21,11 +21,11 @@ function App() {
   // con1:#607EAA
 
   return (
-    <div className="container mx-[auto] my-[150px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#607EAA] shadow-2xl ">
+    <div className="container mx-[auto] my-[100px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#607EAA] shadow-2xl ">
       <h1 className="text-[40px] font-bold mt-10 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
-      <div className="m-10 p-2 flex justify-center gap-3 text-[20px]  ">
+      <div className="m-8 p-2 flex justify-center gap-3 text-[20px]  ">
         <input
           value={location}
           className="rounded-3xl w-[500px] border-black border-2 bg-transparent text-[25px]"
@@ -42,23 +42,23 @@ function App() {
         </div>
 
         {/* Div1 */}
-        <div className="top text-2xl flex justify-between gap-4 m-[0.9rem] ">
+        <div className="top text-2xl flex justify-between gap-5 m-[0.9rem] ">
           <div className="temp text-center ml-[7rem] ">
             {data.main ? `Temperature: ${data.main.temp.toFixed()} °C` : null}
           </div>
-          <div className="description text-center flex mr-[7rem]">
+          <div className="description text-center flex mr-[6rem]">
             {data.weather ? `Description:  ${data.weather[0].main}` : null}
           </div>
         </div>
 
         {data.name !== undefined && (
-          <div className="bottom text-2xl pb-10 flex gap-4 justify-between">
+          <div className="bottom text-2xl pb-10 flex gap-5 justify-between">
             <div className="wind text-center ml-[8rem]">
               {data.wind
                 ? `Wind Speed: ${data.wind.speed.toFixed()} KPH`
                 : null}
             </div>
-            <div className="humidity text-center mr-[9.8rem]">
+            <div className="humidity text-center mr-[10rem]">
               {data.main ? `Humidity: ${data.main.humidity}%` : null}
             </div>
           </div>
