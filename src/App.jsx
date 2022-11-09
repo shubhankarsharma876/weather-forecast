@@ -46,8 +46,8 @@ function App() {
           <div className="temp text-center ml-[7rem] ">
             {data.main ? `Temperature: ${data.main.temp.toFixed()}°C` : null}
           </div>
-          <div className="description text-center flex mr-[6rem]">
-            {data.weather ? `Description: ${data.weather[0].main}`:null}
+          <div className="description text-center flex mr-[11rem]">
+            {data.weather ? `Desc: ${data.weather[0].main} `:null}
           </div>
         </div>
 
