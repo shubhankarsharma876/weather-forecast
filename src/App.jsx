@@ -21,7 +21,7 @@ function App() {
   // con1:#607EAA
 
   return (
-    <div className="container mx-[auto] my-[100px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#607EAA] shadow-2xl ">
+    <div className="container mx-[auto] my-[100px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#b7c9e9] shadow-2xl ">
       <h1 className="text-[40px] font-bold mt-10 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
