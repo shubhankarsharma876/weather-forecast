@@ -1,68 +1,70 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [city, setCity] = useState("");
   const [data, setData] = useState({});
+  const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=8b012c901bf163a9fdf5e605be074fe4`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`;
 
- 
-
-  const searchLocation = async (e) => {
-    if (e.key == "Enter") {
-      await fetch(url).then((res) => {
-        setData(res.data);
-        console.log(city);
+  const searchLocation = (event) => {
+    if (event.key === "Enter") {
+      axios.get(url).then((response) => {
+        setData(response.data);
+        console.log(response.data);
       });
-
-      setCity("");
+      setLocation("");
     }
   };
 
-  const handleClick = async () => {
-    await fetch(url)
-      .then((res) => {
-        setData(res.data);
-        console.log(city);
-      })
-      .catch((err) => console.log(err));
-
-    setCity("");
-  };
-
   return (
-    <div>
-      <h1 className="text-[40px] font-bold mt-6 flex justify-center">
+    <div className="app">
+      <h1 className="text-[40px] font-bold mt-6 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
-      <div className="m-8 p-8 flex justify-center gap-3 ">
+      <div className="m-8 p-8 flex justify-center gap-3 text-[20px] ">
         <input
-          type="text"
-          value={city}
+          value={location}
           className="rounded-xl w-[500px] border-black border-2 bg-transparent"
-          placeholder="Enter city name"
-          onChange={event => setCity(event.target.value)}
-          onKeyUp={searchLocation}
-        ></input>
-        <button
-          className="text-2xl border-2 rounded-xl p-1 cursor-pointer border-black bg-sky-500 hover:bg-sky-700 "
-          onClick={handleClick}
-        >
-          Search
-        </button>
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyPress={searchLocation}
+          placeholder="Enter Location"
+          type="text"
+        />
       </div>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>{data.name}</p>
+          </div>
+          <div className="temp">
+            {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
+          </div>
+          <div className="description">
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
+          </div>
+        </div>
 
-      
-      <div>
-        <div className="header text-center text-2xl ">{`CityName: ${data.name}  `}</div>
-        <div className="middle flex gap-5 justify-center">
-          <div className="Day Date text-center">Date/Date:</div>
-          <div className="description text-center">Weather:</div>
-        </div>
-        <div className="lower flex gap-5 justify-center">
-          <div className="temperature text-cente">Temperature:</div>
-          <div className="humidity text-center">Humidity:</div>
-        </div>
+        {data.name !== undefined && (
+          <div className="bottom">
+            <div className="feels">
+              {data.main ? (
+                <p className="bold">{data.main.feels_like.toFixed()}°F</p>
+              ) : null}
+              <p>Feels Like</p>
+            </div>
+            <div className="humidity">
+              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
+              <p>Humidity</p>
+            </div>
+            <div className="wind">
+              {data.wind ? (
+                <p className="bold">{data.wind.speed.toFixed()} MPH</p>
+              ) : null}
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
