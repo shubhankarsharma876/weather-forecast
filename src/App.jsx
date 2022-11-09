@@ -18,11 +18,11 @@ function App() {
   };
 
   return (
-    <div>
-      <h1 className="text-[40px] font-bold mt-6 flex justify-center text-center">
+    <div className="container mx-[auto] my-[50px] border-black border-2 rounded-2xl">
+      <h1 className="text-[40px] font-bold mt-10 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
-      <div className="m-8 p-8 flex justify-center gap-3 text-[20px] ">
+      <div className="m-10 p-2 flex justify-center gap-3 text-[20px]  ">
         <input
           value={location}
           className="rounded-3xl w-[500px] border-black border-2 bg-transparent"
@@ -67,7 +67,7 @@ function App() {
                 ) : null}
               </div>
             </div>
-            <div className="wind text-center">
+            <div className="wind text-center pb-10">
               {data.wind ? (
                 <p className="bold">
                   Wind Speed: {data.wind.speed.toFixed()} KPH
