@@ -17,6 +17,9 @@ function App() {
     }
   };
 
+  // bg1: #474E68
+  // con1:#607EAA
+
   return (
     <div className="container mx-[auto] my-[150px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#607EAA] shadow-2xl ">
       <h1 className="text-[40px] font-bold mt-10 flex justify-center text-center">
