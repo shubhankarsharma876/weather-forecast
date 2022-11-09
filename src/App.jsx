@@ -18,14 +18,14 @@ function App() {
   };
 
   return (
-    <div className="container mx-[auto] my-[50px] border-black border-2 rounded-2xl">
+    <div className="container mx-[auto] my-[150px] border-transparent border-2 rounded-[30px] w-6/12 bg-[#607EAA] shadow-2xl ">
       <h1 className="text-[40px] font-bold mt-10 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
       <div className="m-10 p-2 flex justify-center gap-3 text-[20px]  ">
         <input
           value={location}
-          className="rounded-3xl w-[500px] border-black border-2 bg-transparent"
+          className="rounded-3xl w-[500px] border-black border-2 bg-transparent text-[25px]"
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
