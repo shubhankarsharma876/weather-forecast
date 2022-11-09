@@ -36,46 +36,30 @@ function App() {
         />
       </div>
       <div>
-        <div className="location text-center  ">
-          {data.name ? (
-            <p className="text-2xl p-2">Location: {data.name}</p>
-          ) : null}
+        {/* Location name */}
+        <div className="location text-3xl p-2 text-center mb-[1.8rem]  ">
+          {data.name ? `Location: ${data.name}` : null}
         </div>
-        <div className="top text-xl flex justify-center gap-4">
-          <div className="temp text-center flex ">
-            {data.main ? (
-              <h1 className="flex-start">
-                Temperature: {data.main.temp.toFixed()}°C
-              </h1>
-            ) : null}
+
+        {/* Div1 */}
+        <div className="top text-2xl flex justify-between gap-4 m-[0.9rem] ">
+          <div className="temp text-center ml-[7rem] ">
+            {data.main ? `Temperature: ${data.main.temp.toFixed()} °C` : null}
           </div>
-          <div className="description text-center flex">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
+          <div className="description text-center flex mr-[7rem]">
+            {data.weather ? `Description:  ${data.weather[0].main}` : null}
           </div>
         </div>
 
         {data.name !== undefined && (
-          <div className="bottom text-xl">
-            <div className="flex gap-3 justify-center">
-              <div className="feels text-center flex ">
-                {data.main ? (
-                  <p className="bold">
-                    Feels Like: {data.main.feels_like.toFixed()}°C
-                  </p>
-                ) : null}
-              </div>
-              <div className="humidity text-center">
-                {data.main ? (
-                  <p className="bold">Humidity: {data.main.humidity}%</p>
-                ) : null}
-              </div>
+          <div className="bottom text-2xl pb-10 flex gap-4 justify-between">
+            <div className="wind text-center ml-[8rem]">
+              {data.wind
+                ? `Wind Speed: ${data.wind.speed.toFixed()} KPH`
+                : null}
             </div>
-            <div className="wind text-center pb-10">
-              {data.wind ? (
-                <p className="bold">
-                  Wind Speed: {data.wind.speed.toFixed()} KPH
-                </p>
-              ) : null}
+            <div className="humidity text-center mr-[9.8rem]">
+              {data.main ? `Humidity: ${data.main.humidity}%` : null}
             </div>
           </div>
         )}
