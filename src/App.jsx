@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=895284fb2d2c50a520ea537456963d9c`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
@@ -18,50 +18,61 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div>
       <h1 className="text-[40px] font-bold mt-6 flex justify-center text-center">
         ⛈️ Weather Forecast ☀️
       </h1>
       <div className="m-8 p-8 flex justify-center gap-3 text-[20px] ">
         <input
           value={location}
-          className="rounded-xl w-[500px] border-black border-2 bg-transparent"
+          className="rounded-3xl w-[500px] border-black border-2 bg-transparent"
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
           type="text"
         />
       </div>
-      <div className="container">
-        <div className="top">
-          <div className="location text-center ">
-            <p>{data.name}</p>
+      <div>
+        <div className="location text-center  ">
+          {data.name ? (
+            <p className="text-2xl p-2">Location: {data.name}</p>
+          ) : null}
+        </div>
+        <div className="top text-xl flex justify-center gap-4">
+          <div className="temp text-center flex ">
+            {data.main ? (
+              <h1 className="flex-start">
+                Temperature: {data.main.temp.toFixed()}°C
+              </h1>
+            ) : null}
           </div>
-          <div className="temp text-center">
-            {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
-          </div>
-          <div className="description text-center">
+          <div className="description text-center flex">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
 
         {data.name !== undefined && (
-          <div className="bottom">
-            <div className="feels text-center">
-              {data.main ? (
-                <p className="bold">{data.main.feels_like.toFixed()}°F</p>
-              ) : null}
-              <p>Feels Like</p>
-            </div>
-            <div className="humidity text-center">
-              {data.main ? <p className="bold">{data.main.humidity}%</p> : null}
-              <p>Humidity</p>
+          <div className="bottom text-xl">
+            <div className="flex gap-3 justify-center">
+              <div className="feels text-center flex ">
+                {data.main ? (
+                  <p className="bold">
+                    Feels Like: {data.main.feels_like.toFixed()}°C
+                  </p>
+                ) : null}
+              </div>
+              <div className="humidity text-center">
+                {data.main ? (
+                  <p className="bold">Humidity: {data.main.humidity}%</p>
+                ) : null}
+              </div>
             </div>
             <div className="wind text-center">
               {data.wind ? (
-                <p className="bold">{data.wind.speed.toFixed()} MPH</p>
+                <p className="bold">
+                  Wind Speed: {data.wind.speed.toFixed()} KPH
+                </p>
               ) : null}
-              <p>Wind Speed</p>
             </div>
           </div>
         )}
