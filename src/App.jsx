@@ -28,7 +28,7 @@ function App() {
       <div className="m-8 p-2 flex justify-center gap-3 text-[20px]  ">
         <input
           value={location}
-          className="rounded-3xl w-[500px] border-black border-2 bg-transparent text-[25px]"
+          className="rounded-3xl w-[500px] border-black border-2 bg-transparent text-[25px] indent-2"
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Enter Location"
