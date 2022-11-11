@@ -1,6 +1,6 @@
 ## Weather Forecast [ClickHere](https://636e8366a375d80008ac8ed3--friendly-trifle-de5c61.netlify.app/)
 ***
-This is a web page which is build on the tech stack of JavaScript,React,Tailwind,HTML,CSS,Vite. With the help of OpenWeather API the details are gathered by the organization(Open Weather). But the benefit of this project is that the project provides the user a convenient view of the details regarding the weather of the city or place searched.
+This is a web page which is built using JavaScript,React,Tailwind,Vite. With the help of OpenWeather API the details are gathered by the organization(Open Weather). But the benefit of this project is that the project provides the user a convenient view of the details regarding the weather of the city or place searched.
 
 ![with details](https://user-images.githubusercontent.com/71379135/201155832-3a5a2a02-7cbf-4f4b-ada0-d7778f289a16.png)
 ***
