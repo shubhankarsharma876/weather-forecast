@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import "./Modal.css";
+import Axios from "axios";
+
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
 
   const [name, setName] = useState("");
-  const [feedbackdb, setFeedbackdb] = useState("");
+  const [feedback, setFeedback] = useState("");
   const [email, setEmail] = useState("");
+
+  const addFeedback = () => {
+    Axios.post("http://localhost:5174/create", {
+      name: name,
+      email: email,
+      feedback: feedback,
+    }).then(( ) => console.log('success') )
+  };
 
   const toggleModal = () => {
     setModal(!modal);
@@ -18,9 +28,6 @@ export default function Modal() {
     document.body.classList.remove("active-modal");
   }
 
-  const displayInfo = () => {
-    console.log(name + " " + email + " " + feedbackdb);
-  };
 
   return (
     <>
@@ -60,7 +67,7 @@ export default function Modal() {
                   <input
                     type="text"
                     className="rounded-md w-[370px]"
-                    onChange={(event) => setFeedbackdb(event.target.value)}
+                    onChange={(event) => setFeedback(event.target.value)}
                   ></input>
                 </div>
               </div>
@@ -75,7 +82,7 @@ export default function Modal() {
 
             <button
               className="border-2 border-black rounded-xl mt-6 p-2 w-1/2 ml-[25%]"
-              onClick={displayInfo}
+              onClick={addFeedback}
             >
               Submit
             </button>
