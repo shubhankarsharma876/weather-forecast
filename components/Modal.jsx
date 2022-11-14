@@ -30,9 +30,17 @@ export default function Modal() {
             <div>
               <h1 className="text-2xl">Feedback Form</h1>
               <div>
-                <div className="flex gap-2 p-2 justify-center mt-5 text-xl ">
-                  <p>Name: </p>
-                  <input  className="rounded-xl"></input>
+                <div className="flex gap-2 p-2  mt-5 text-xl ">
+                  <p className="justify-start">Name: </p>
+                  <input className="rounded-md"></input>
+                </div>
+                <div className="flex gap-2 p-2  mt-5 text-xl  ">
+                  <p className="justify-start">Email: </p>
+                  <input className="rounded-md"></input>
+                </div>
+                <div className="flex gap-2 p-2  mt-5 text-xl ">
+                  <p className="justify-start">Feedback: </p>
+                  <input className="rounded-md"></input>
                 </div>
               </div>
             </div>
