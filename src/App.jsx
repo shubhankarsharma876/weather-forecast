@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
+import Modal from "../components/Modal";
 
 function App() {
   const [data, setData] = useState({});
@@ -66,12 +67,7 @@ function App() {
         )}
       </div>
 
-      <div className="flex justify-center gap-3 mr-8 mb-4">
-        <button className="border-black border-2 rounded-xl p-3 ">
-          {" "}
-          Feedback{" "}
-        </button>
-      </div>
+      <Modal />
     </div>
   );
 }
