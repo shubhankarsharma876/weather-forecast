@@ -18,7 +18,7 @@ export default function Modal() {
     <>
       <button
         onClick={toggleModal}
-        className="btn-modal border-2 border-black rounded-xl mb-3"
+        className="btn-modal border-2 border-black rounded-xl mb-8"
       >
         Feedback
       </button>
@@ -26,21 +26,27 @@ export default function Modal() {
       {feedback && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
+          <div className="modal-content ">
             <div>
-              <h1 className="text-2xl">Feedback Form</h1>
+              <h1 className="text-2xl pb-3 pl-2">Feedback Form</h1>
               <div>
                 <div className="flex gap-2 p-2  mt-5 text-xl ">
                   <p className="justify-start">Name: </p>
-                  <input className="rounded-md"></input>
+                  <input
+                    type="text"
+                    className="rounded-md w-[370px] ml-7 "
+                  ></input>
                 </div>
                 <div className="flex gap-2 p-2  mt-5 text-xl  ">
                   <p className="justify-start">Email: </p>
-                  <input className="rounded-md"></input>
+                  <input
+                    type="email"
+                    className="rounded-md w-[370px] ml-9"
+                  ></input>
                 </div>
                 <div className="flex gap-2 p-2  mt-5 text-xl ">
                   <p className="justify-start">Feedback: </p>
-                  <input className="rounded-md"></input>
+                  <input type="text" className="rounded-md w-[370px]  "></input>
                 </div>
               </div>
             </div>
@@ -49,7 +55,7 @@ export default function Modal() {
               className="close-modal border-2 rounded-xl border-black"
               onClick={toggleModal}
             >
-              CLOSE
+              Close
             </button>
           </div>
         </div>
