@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const cors = require("cors");
 
 app.use(cors())
+app.use(express.json())
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -15,11 +16,11 @@ const db = mysql.createConnection({
 app.post("/create", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
-  const feedbackdb = req.body.feedbackdb;
+  const feedback = req.body.feedback;
 
   db.query(
-    "insert into fbtable (name,email,feedbackdb) values (?,?,?)",
-    [name, email, feedbackdb],
+    "insert into fbtable (name,email,feedback) values (?,?,?)",
+    [name, email, feedback],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -28,6 +29,7 @@ app.post("/create", (req, res) => {
       }
     }
   );
+  console.log('syuccess ')
 });
 
 app.listen(5174, () => {
