@@ -68,6 +68,7 @@ export default function Modal() {
                     type="text"
                     className="rounded-md w-[370px]"
                     onChange={(event) => setFeedback(event.target.value)}
+                    onSubmit={toggleModal}
                   ></input>
                 </div>
               </div>
@@ -83,9 +84,12 @@ export default function Modal() {
             <button
               className="border-2 border-black rounded-xl mt-6 p-2 w-1/2 ml-[25%]"
               onClick={addFeedback}
+              
             >
               Submit
             </button>
+
+            
           </div>
         </div>
       )}
