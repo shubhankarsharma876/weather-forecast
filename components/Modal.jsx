@@ -57,9 +57,17 @@ export default function Modal() {
             >
               Close
             </button>
+
+
+            <button className="border-2 border-black rounded-xl mt-6 p-2 w-1/2 ml-[25%]">Submit</button>
           </div>
+
+          
         </div>
+        
       )}
+
+      
     </>
   );
 }
