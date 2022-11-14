@@ -6,11 +6,11 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "password",
-  database: "weatherdb",
+  database: "",
 });
 
 app.get("/", (req, res) => {
-  res.send("hello world i am a server");
+  
 });
 
 app.listen(5174, () => {

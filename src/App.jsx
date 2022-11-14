@@ -47,7 +47,7 @@ function App() {
             {data.main ? `Temperature: ${data.main.temp.toFixed()}°C` : null}
           </div>
           <div className="description text-center flex mr-[11rem]">
-            {data.weather ? `Desc: ${data.weather[0].main} `:null}
+            {data.weather ? `Desc: ${data.weather[0].main} ` : null}
           </div>
         </div>
 
@@ -63,6 +63,13 @@ function App() {
             </div>
           </div>
         )}
+      </div>
+
+      <div className="flex justify-center gap-3 mr-8 mb-4">
+        <button className="border-black border-2 rounded-xl p-3 ">
+          {" "}
+          Feedback{" "}
+        </button>
       </div>
     </div>
   );
