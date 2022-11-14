@@ -6,7 +6,7 @@ const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "password",
-  database: "",
+  database: "feedback",
 });
 
 app.get("/", (req, res) => {
