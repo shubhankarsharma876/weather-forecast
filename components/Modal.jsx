@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
+import axios from "axios";
+
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
@@ -7,6 +9,14 @@ export default function Modal() {
   const [name, setName] = useState("");
   const [feedbackdb, setFeedbackdb] = useState("");
   const [email, setEmail] = useState("");
+
+  const addFeedback = () => {
+    axios.post("http://localhost:5174/create", {
+      name: name,
+      email: email,
+      feedbackdb: feedbackdb,
+    }).then(( ) => console.log('success') )
+  };
 
   const toggleModal = () => {
     setModal(!modal);
@@ -75,7 +85,7 @@ export default function Modal() {
 
             <button
               className="border-2 border-black rounded-xl mt-6 p-2 w-1/2 ml-[25%]"
-              onClick={displayInfo}
+              onClick={addFeedback}
             >
               Submit
             </button>
