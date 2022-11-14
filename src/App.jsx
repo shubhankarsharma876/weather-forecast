@@ -65,7 +65,11 @@ function App() {
             </div>
           </div>
         )}
-        {data.name !== undefined && (<Modal />)}
+        
+        {data.name !== undefined && <Modal />}
+
+        
+        
       </div>
     </div>
   );
